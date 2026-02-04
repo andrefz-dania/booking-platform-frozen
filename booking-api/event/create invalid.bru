@@ -1,0 +1,41 @@
+meta {
+  name: create invalid
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:3000/api/event/create
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+  
+    "shortDescription": "Bridge/Golf 2026 - i Svendborg under Dansk Bridgefestival.",
+    "description": "Halv bridge, halv golf - men 200% sjovt. Tilmelding til det uofficielle danmarksmesterskab i Bridge/Golf kræver medlemskab af en DBf-klub. Det koster 2.800 kr. pr. par. OBS - Deltagerbegrænsning - max. 44 par / 88 deltagere.",
+  
+    "creator": 1,
+    "price": -2800.00,
+    "maxSignups": 88,
+    "groupSize": 2,
+  
+    "eventStart": "2026-06-03T16:000:00.000Z",
+    "eventEnd": "2026-06-05T13:00:00.000Z",
+    "createdAt": "2026-01-26T18:10:23.951Z",
+    "signupDeadline": "2026-05-28T21:54449:00.000Z",
+  
+    "locationName": "Svendborg Idrætscenter",
+    "address": "Ryttervej 70",
+    "addressPostCode": "5700",
+    "addressCity": "Svendborg",
+  
+    "contactInfo": "Phone: +45 12345678, Email: test@example.com"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
