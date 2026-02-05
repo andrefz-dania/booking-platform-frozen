@@ -1,6 +1,7 @@
 "use client";
 
 import Bookings from "@/components/BookingInfo";
+import LoadingSpinner from "@/components/LoadingSpinner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatDate } from "@/lib/formatters";
@@ -41,6 +42,9 @@ export default function Profile() {
         getData();
     }, [])
 
+    if (loading) {
+        return (<LoadingSpinner></LoadingSpinner>)
+    }
 
 
     return (<div>

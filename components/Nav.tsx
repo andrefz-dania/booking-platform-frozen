@@ -68,7 +68,7 @@ export function Navbar() {
     };
 
     const createComponent = {
-        title: "Opret",
+        title: "Opret begivenhed",
         href: "/events/create",
         description: "Opret en ny begivenhed som en administrator",
     };

@@ -108,6 +108,7 @@ export default function FormCreateEvent() {
                         id="eventTitle"
                         placeholder="Begivenhedens navn"
                         type="text"
+                        maxLength={120}
                         defaultValue={formErrors?.prevData?.title ?? undefined}
                         aria-invalid={formErrors && formErrors.title ? "true" : false}
                         required
@@ -128,6 +129,7 @@ export default function FormCreateEvent() {
                         id="shortDescription"
                         placeholder="Kort beskrivelse"
                         type="text"
+                        maxLength={120}
                         defaultValue={formErrors?.prevData?.shortDescription ?? undefined}
 
                         aria-invalid={formErrors && formErrors.shortDescription ? "true" : false}
@@ -160,6 +162,8 @@ export default function FormCreateEvent() {
                         id="maxSignups"
                         placeholder="Blank for intet maximum"
                         type="number"
+                        min={0}
+                        max={100000}
                         defaultValue={formErrors?.prevData?.maxSignups ?? undefined}
 
                         aria-invalid={formErrors && formErrors.maxSignups ? "true" : false}
@@ -179,6 +183,8 @@ export default function FormCreateEvent() {
                         id="groupSize"
                         placeholder="1"
                         type="number"
+                        min={0}
+                        max={100000}
                         defaultValue={formErrors?.prevData?.groupSize ?? undefined}
 
                         aria-invalid={formErrors && formErrors.groupSize ? "true" : false}
@@ -214,6 +220,7 @@ export default function FormCreateEvent() {
                     <InputGroupInput
                         id="price"
                         placeholder="Pris"
+                        min={0}
                         type="number"
                         defaultValue={formErrors?.prevData?.price ?? undefined}
                         aria-invalid={formErrors && formErrors.price ? "true" : false}
@@ -379,6 +386,7 @@ export default function FormCreateEvent() {
                         id="locationName"
                         placeholder="Område eller bygnings navn, fx. 'Sportshal 2'"
                         type="text"
+                        maxLength={120}
                         defaultValue={formErrors?.prevData?.locationName ?? undefined}
                         aria-invalid={formErrors && formErrors.locationName ? "true" : false}
 
@@ -395,6 +403,7 @@ export default function FormCreateEvent() {
                         id="address"
                         placeholder="Vejnavn, nummer, sal osv."
                         type="text"
+                        maxLength={250}
                         defaultValue={formErrors?.prevData?.address ?? undefined}
                         aria-invalid={formErrors && formErrors.address ? "true" : false}
 
@@ -418,6 +427,7 @@ export default function FormCreateEvent() {
                         id="addressPostCode"
                         placeholder="fx. 8000"
                         type="text"
+                        maxLength={10}
                         defaultValue={formErrors?.prevData?.addressPostCode ?? undefined}
                         aria-invalid={formErrors && formErrors.addressPostCode ? "true" : false}
 

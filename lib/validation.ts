@@ -43,7 +43,7 @@ export function validateEvent(newEvent: EventType) {
     if (!validateDate(newEvent.eventStart))
         validationErrors.eventStart = "Ugyldigt tidspunkt";
     if (newEvent.eventEnd && !validateDate(newEvent.eventEnd))
-        validationErrors.eventStart = "Ugyldigt tidspunkt";
+        validationErrors.eventEnd = "Ugyldigt tidspunkt";
     if (!newEvent.signupDeadline)
         validationErrors.signupDeadline = "Tilmeldingsfrist er påkrævet";
     if (!validateDate(newEvent.signupDeadline))
@@ -58,7 +58,10 @@ export function validateEvent(newEvent: EventType) {
     if (newEvent.maxSignups && isNaN(Number(newEvent.maxSignups))) validationErrors.maxSignups = "Maximum deltagere skal være et tal eller blank";
 
     //group size validation
-    if (newEvent.groupSize && isNaN(Number(newEvent.groupSize))) validationErrors.groupSize = "Gruppe størrelse skal være et tal eller blank";
+    if (newEvent.groupSize && isNaN(Number(newEvent.groupSize)))
+        validationErrors.groupSize = "Gruppe størrelse skal være et tal eller blank";
+    if (newEvent.groupSize && newEvent.maxSignups && newEvent.maxSignups < newEvent.groupSize)
+        validationErrors.groupSize = "Gruppe størrelse må ikke være større end maximum deltagere";
 
     return validationErrors;
 }

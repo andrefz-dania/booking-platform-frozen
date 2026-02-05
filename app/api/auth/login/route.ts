@@ -27,7 +27,8 @@ export async function POST(req: Request) {
         return new Response(
             JSON.stringify({
                 validationErrors: [
-                   {email: "Incorrect email"}
+                   {email: "Forkert email eller kode"},
+                   {password: "Forkert email eller kode"}
                 ]
             }),
             { status: 403 }
@@ -48,7 +49,8 @@ export async function POST(req: Request) {
         return new Response(
             JSON.stringify({
                 validationErrors: [
-                   {email: "Incorrect password"}
+                    {email: "Forkert email eller kode"},
+                    {password: "Forkert email eller kode"}
                 ]
             }),
             { status: 403 }
